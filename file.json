@@ -1,26 +1,14 @@
 [
-    {
-    "ccy":"EUR",
-    "base_ccy":"UAH",
-    "buy":"19.20000",
-    "sale":"20.00000"
-    },
-    {
-    "ccy":"USD",
-    "base_ccy":"UAH",
-    "buy":"15.50000",
-    "sale":"15.85000"
-    },
-    {
-        "ccy": "UAH",
-        "base_ccy": "USD",
-        "buy": "0.065",
-        "sale": "0.07"
-    },
-    {
-        "ccy": "UAH",
-        "base_ccy": "EUR",
-        "buy": "0.052",
-        "sale": "0.055"
-    }
+            {
+            "ccy":"EUR",
+            "base_ccy":"UAH",
+            "buy":"19.20000",
+            "sale":"20.00000"
+            },
+            {
+            "ccy":"USD",
+            "base_ccy":"UAH",
+            "buy":"15.50000",
+            "sale":"15.85000"
+            }
 ]
