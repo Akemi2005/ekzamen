@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Валюти</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh; 
+        }
+
+        select, input {
+            margin: 5px;
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #result {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <select name="First_cure" id="first_curn">
+            <option value="uah">Гривні</option>
+            <option value="usd">Долари</option>
+            <option value="eur">Євро</option>
+        </select>
+            
+        <select name="first_curr" id="first_curr">
+            <option value="uah">Гривні</option>
+            <option value="usd">Долари</option>
+            <option value="eur">Євро</option>
+        </select>
+            
+        <label for="num">Купити суму:</label><input type="text" id="num">
+    </div>
+    <p>Вартість: <b id="result"></b></p>
+    
+    <script>
+        function calculateCurrency() {
+            let firstCurrency = document.getElementById("first_curr").value;
+            let secondCurrency = document.getElementById("first_curn").value;
+            let amount = parseFloat(document.getElementById("num").value);
+
+            let exchangeRates = {
+                "uah_usd": 0.030,
+                "uah_eur": 0.036,
+                "usd_uah": 38.76,
+                "usd_eur": 0.85,
+                "eur_uah": 42.40,
+                "eur_usd": 1.18
+            };
+
+            if (firstCurrency === secondCurrency) {
+                alert("Будь ласка, виберіть різні валюти для конвертації.");
+                return;
+            }
+
+            let rateKey = firstCurrency + "_" + secondCurrency;
+            let result = amount * exchangeRates[rateKey];
+
+            document.getElementById("result").innerText = result.toFixed(2) + " " + secondCurrency;
+        }
+        document.getElementById("num").addEventListener("input", calculateCurrency);
+    </script>
+</body>
+</html>
